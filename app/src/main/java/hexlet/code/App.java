@@ -5,9 +5,11 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
+import java.util.Map;
+
 @Command(
         name = "gendiff",
-        mixinStandardHelpOptions = false,
+        mixinStandardHelpOptions = true, // Включаем стандартные опции справки
         version = "gendiff 1.0",
         description = "Compares two configuration files and shows a difference.",
         synopsisHeading = "Usage: ",
@@ -30,11 +32,17 @@ public class App implements Runnable {
     @Parameters(paramLabel = "filepath2", description = "path to second file")
     String filepath2;
 
-
     @Override
     public void run() {
-        System.out.println("Gendiff is running...");
+        try {
+            String diff = Differ.generate(filepath1, filepath2);
+            System.out.println(diff);
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
     }
+
+
 
     public static void main(String[] args) {
         int exitCode = new CommandLine(new App()).execute(args);
