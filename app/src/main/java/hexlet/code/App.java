@@ -5,7 +5,7 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
-import java.util.Map;
+import java.util.concurrent.Callable;
 
 @Command(
         name = "gendiff",
@@ -15,7 +15,7 @@ import java.util.Map;
         synopsisHeading = "Usage: ",
         customSynopsis = "gendiff [-hV] [-f=format] filepath1 filepath2"
 )
-public class App implements Runnable {
+public class App implements Callable<String> {
 
     @Option(names = {"-h", "--help"}, usageHelp = true, description = "Show this help message and exit.")
     boolean help;
@@ -33,13 +33,14 @@ public class App implements Runnable {
     String filepath2;
 
     @Override
-    public void run() {
+    public String call() {
         try {
             String diff = Differ.generate(filepath1, filepath2);
             System.out.println(diff);
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
         }
+        return null;
     }
 
 

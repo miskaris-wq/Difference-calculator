@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.util.Arrays;
 import java.util.Map;
 
 public class Differ {
@@ -12,7 +13,14 @@ public class Differ {
             StringBuilder diff = new StringBuilder();
             diff.append("{\n");
 
-            for (String key : data1.keySet()) {
+            // Сортировка ключей
+            String[] keys1 = data1.keySet().toArray(new String[0]);
+            String[] keys2 = data2.keySet().toArray(new String[0]);
+            Arrays.sort(keys1);
+            Arrays.sort(keys2);
+
+            // Обработка ключей из data1
+            for (String key : keys1) {
                 if (!data2.containsKey(key)) {
                     diff.append("  - ").append(key).append(": ").append(data1.get(key)).append("\n");
                 } else if (!data1.get(key).equals(data2.get(key))) {
@@ -23,7 +31,8 @@ public class Differ {
                 }
             }
 
-            for (String key : data2.keySet()) {
+            // Обработка ключей, которые есть только в data2
+            for (String key : keys2) {
                 if (!data1.containsKey(key)) {
                     diff.append("  + ").append(key).append(": ").append(data2.get(key)).append("\n");
                 }
@@ -36,4 +45,3 @@ public class Differ {
         }
     }
 }
-
