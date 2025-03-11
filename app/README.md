@@ -1,6 +1,5 @@
 https://asciinema.org/a/6fQPc1ojcaqSYf17XK49F1YEo
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/e8f7dae9a71a67aea0c5/maintainability)](https://codeclimate.com/github/miskaris-wq/java-project-71/maintainability)
-<a href="https://codeclimate.com/github/miskaris-wq/java-project-71/test_coverage"><img src="https://api.codeclimate.com/v1/badges/e8f7dae9a71a67aea0c5/test_coverage" /></a>
-
+[![Test Coverage](https://api.codeclimate.com/v1/badges/e8f7dae9a71a67aea0c5/test_coverage)](https://codeclimate.com/github/miskaris-wq/java-project-71/test_coverage)
 
