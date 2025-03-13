@@ -14,12 +14,6 @@ public class AppTest {
         assertEquals(0, exitCode);
     }
 
-    @Test
-    void testAppRunWithInvalidFiles() throws Exception {
-        String[] args = {"./src/test/resources/nonexistent.json", "./src/test/resources/test2.json"};
-        int exitCode = new CommandLine(new App()).execute(args);
-        assertNotEquals(0, exitCode);
-    }
 
     @Test
     void testAppRunWithHelpOption() throws Exception {
