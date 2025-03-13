@@ -63,4 +63,25 @@ class DifferTest {
 
 
     }
+    @Test
+    void testGenerateDiffWhenFilesHaveDifferentValues() throws Exception {
+        String path1 = "./src/test/resources/test9.json";
+        String path2 = "./src/test/resources/test10.json";
+
+        String expected = "{\n" + "    host: hexlet.io\n" + "  - timeout: 20\n" + "  + timeout: 30\n" + "}";
+        String diff = Differ.generate(path1, path2);
+
+        assertEquals(expected, diff);
+    }
+
+    @Test
+    void testGenerateDiffWhenFilesHaveDifferentKeys() throws Exception {
+        String path1 = "./src/test/resources/test11.json";
+        String path2 = "./src/test/resources/test12.json";
+
+        String expected = "{\n" + "    host: hexlet.io\n" + "  - timeout: 20\n" + "  + verbose: true\n" + "}";
+        String diff = Differ.generate(path1, path2);
+
+        assertEquals(expected, diff);
+    }
 }
