@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 
 @Command(
         name = "gendiff",
-        mixinStandardHelpOptions = true, // Включаем стандартные опции справки
+        mixinStandardHelpOptions = true,
         version = "gendiff 1.0",
         description = "Compares two configuration files and shows a difference.",
         synopsisHeading = "Usage: ",

@@ -28,5 +28,12 @@ public class AppTest {
         int exitCode = new CommandLine(new App()).execute(args);
         assertEquals(0, exitCode);
     }
+    @Test
+    void testAppRunWithFormatOption() throws Exception {
+        String[] args = {"-f", "stylish", "./src/test/resources/test1.json", "./src/test/resources/test2.json"};
+        int exitCode = new CommandLine(new App()).execute(args);
+        assertEquals(0, exitCode);
+    }
+
 
 }
