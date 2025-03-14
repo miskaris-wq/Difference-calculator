@@ -9,7 +9,7 @@ public class DiffBuilder {
         Map<String, Map<String, Object>> diff = new TreeMap<>();
 
         for (String key : data1.keySet()) {
-            Map<String, Object> keyDiff = new TreeMap<>();
+            Map<String, Object> keyDiff = new TreeMap<>(); // Используем TreeMap для сортировки
             if (!data2.containsKey(key)) {
                 keyDiff.put("status", "removed");
                 keyDiff.put("oldValue", data1.get(key));
@@ -28,7 +28,7 @@ public class DiffBuilder {
 
         for (String key : data2.keySet()) {
             if (!data1.containsKey(key)) {
-                Map<String, Object> keyDiff = new TreeMap<>();
+                Map<String, Object> keyDiff = new TreeMap<>(); // Используем TreeMap для сортировки
                 keyDiff.put("status", "added");
                 keyDiff.put("newValue", data2.get(key));
                 diff.put(key, keyDiff);

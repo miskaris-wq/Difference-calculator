@@ -32,6 +32,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation ("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.x.x")
+    testImplementation ("org.skyscreamer:jsonassert:1.5.1")
 
 
 }
