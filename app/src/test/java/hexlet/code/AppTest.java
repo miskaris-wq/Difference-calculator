@@ -13,6 +13,12 @@ public class AppTest {
         int exitCode = new CommandLine(new App()).execute(args);
         assertEquals(0, exitCode);
     }
+    @Test
+    void testAppRunsWithValidYMALFiles() throws Exception {
+        String[] args = {"./src/test/resources/test1.yml", "./src/test/resources/test2.yml"};
+        int exitCode = new CommandLine(new App()).execute(args);
+        assertEquals(0, exitCode);
+    }
 
 
     @Test
