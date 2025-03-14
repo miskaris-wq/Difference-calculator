@@ -15,7 +15,7 @@ import java.util.concurrent.Callable;
         synopsisHeading = "Usage: ",
         customSynopsis = "gendiff [-hV] [-f=format] filepath1 filepath2"
 )
-final public class App implements Callable<String> {
+public final class App implements Callable<String> {
 
     @Option(names = {"-h", "--help"}, usageHelp = true, description = "Show this help message and exit.")
     private boolean help;
