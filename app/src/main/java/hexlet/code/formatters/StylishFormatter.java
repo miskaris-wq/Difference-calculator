@@ -59,5 +59,4 @@ public class StylishFormatter {
             return value.toString();
         }
     }
-
 }
