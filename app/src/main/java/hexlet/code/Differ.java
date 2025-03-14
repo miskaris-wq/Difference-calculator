@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.formatters.Formatter;
+import hexlet.code.formatters.JsonFormatter;
 import hexlet.code.formatters.PlainFormatter;
 import hexlet.code.formatters.StylishFormatter;
 
@@ -17,6 +18,8 @@ public class Differ {
                 return PlainFormatter.format(data1, data2);
             case "stylish":
                 return StylishFormatter.format(data1, data2);
+            case "json":
+                return JsonFormatter.format(data1, data2);
             default:
                 throw new IllegalArgumentException("Unsupported format: " + format);
         }
