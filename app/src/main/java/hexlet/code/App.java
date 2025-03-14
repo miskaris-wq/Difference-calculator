@@ -43,8 +43,6 @@ public class App implements Callable<String> {
         return null;
     }
 
-
-
     public static void main(String[] args) {
         int exitCode = new CommandLine(new App()).execute(args);
         System.exit(exitCode);
