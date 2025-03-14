@@ -49,8 +49,12 @@ public class Differ {
     }
 
     private static boolean isEqualValues(Object value1, Object value2) {
-        if (value1 == null && value2 == null) {return true;}
-        if (value1 == null || value2 == null) {return false;}
+        if (value1 == null && value2 == null) {
+            return true;
+        }
+        if (value1 == null || value2 == null) {
+            return false;
+        }
 
         return value1.toString().equals(value2.toString());
     }
