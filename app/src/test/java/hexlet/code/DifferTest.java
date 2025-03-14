@@ -22,7 +22,7 @@ class DifferTest {
         String path1 = "./src/test/resources/test3.json";
         String path2 = "./src/test/resources/test4.json";
 
-        String expected = "{\n" + "    host: hexlet.io\n" + "    verbose: true\n" + "  + timeout: 20\n" + "}";
+        String expected = "{\n" + "    host: hexlet.io\n" + "  + timeout: 20\n" + "    verbose: true\n" + "}";
         String diff = Differ.generate(path1, path2);
 
         assertEquals(expected, diff);
@@ -79,9 +79,50 @@ class DifferTest {
         String path1 = "./src/test/resources/test11.json";
         String path2 = "./src/test/resources/test12.json";
 
+
         String expected = "{\n" + "    host: hexlet.io\n" + "  - timeout: 20\n" + "  + verbose: true\n" + "}";
         String diff = Differ.generate(path1, path2);
 
         assertEquals(expected, diff);
     }
+
+        @Test
+        void testYamlSpecificFeatures() throws Exception {
+            String path1 = "./src/test/resources/test1.yml";
+            String path2 = "./src/test/resources/test2.yml";
+
+            String expected = """
+            {
+              - follow: false
+                host: hexlet.io
+              - proxy: 123.234.53.22
+              - timeout: 50
+              + timeout: 20
+              + verbose: true
+            }""";
+
+            String diff = Differ.generate(path1, path2);
+
+            assertEquals(expected, diff);
+        }
+
+    @Test
+    void testYamlBothAreEquals() throws Exception {
+        String path1 = "./src/test/resources/test3.yml";
+        String path2 = "./src/test/resources/test4.yml";
+
+        String expected = """
+            {
+                host: hexlet.io
+                timeout: 20,
+                verbose: true,
+            }""";
+
+        String diff = Differ.generate(path1, path2);
+
+        assertEquals(expected, diff);
+    }
+
+
+
 }

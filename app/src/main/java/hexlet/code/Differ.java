@@ -1,47 +1,59 @@
 package hexlet.code;
 
-import java.util.Arrays;
+import java.util.TreeSet;
 import java.util.Map;
 
 public class Differ {
 
     public static String generate(String filepath1, String filepath2) {
         try {
-            Map<String, Object> data1 = JsonParser.parseJson(filepath1);
-            Map<String, Object> data2 = JsonParser.parseJson(filepath2);
+            Map<String, Object> data1 = Parser.parse(filepath1);
+            Map<String, Object> data2 = Parser.parse(filepath2);
 
-            StringBuilder diff = new StringBuilder();
-            diff.append("{\n");
+            StringBuilder diff = new StringBuilder("{\n");
 
-            // Сортировка ключей
-            String[] keys1 = data1.keySet().toArray(new String[0]);
-            String[] keys2 = data2.keySet().toArray(new String[0]);
-            Arrays.sort(keys1);
-            Arrays.sort(keys2);
+            // Объединяем и сортируем все ключи
+            TreeSet<String> allKeys = new TreeSet<>();
+            allKeys.addAll(data1.keySet());
+            allKeys.addAll(data2.keySet());
 
-            // Обработка ключей из data1
-            for (String key : keys1) {
+            for (String key : allKeys) {
+                Object value1 = data1.get(key);
+                Object value2 = data2.get(key);
+
                 if (!data2.containsKey(key)) {
-                    diff.append("  - ").append(key).append(": ").append(data1.get(key)).append("\n");
-                } else if (!data1.get(key).equals(data2.get(key))) {
-                    diff.append("  - ").append(key).append(": ").append(data1.get(key)).append("\n");
-                    diff.append("  + ").append(key).append(": ").append(data2.get(key)).append("\n");
+                    appendLine(diff, "- ", key, value1);
+                } else if (!data1.containsKey(key)) {
+                    appendLine(diff, "+ ", key, value2);
+                } else if (!isEqualValues(value1, value2)) {
+                    appendLine(diff, "- ", key, value1);
+                    appendLine(diff, "+ ", key, value2);
                 } else {
-                    diff.append("    ").append(key).append(": ").append(data1.get(key)).append("\n");
-                }
-            }
-
-            // Обработка ключей, которые есть только в data2
-            for (String key : keys2) {
-                if (!data1.containsKey(key)) {
-                    diff.append("  + ").append(key).append(": ").append(data2.get(key)).append("\n");
+                    appendLine(diff, "  ", key, value1);
                 }
             }
 
             diff.append("}");
-            return diff.toString();
+            return diff.toString().trim();
         } catch (Exception e) {
-            throw new RuntimeException("Error parsing files", e);
+            throw new RuntimeException("Error generating diff: " + e.getMessage(), e);
         }
+    }
+
+    private static void appendLine(StringBuilder sb, String prefix, String key, Object value) {
+        sb.append("  ")
+                .append(prefix)
+                .append(key)
+                .append(": ")
+                .append(value)
+                .append("\n");
+    }
+
+    private static boolean isEqualValues(Object value1, Object value2) {
+        if (value1 == null && value2 == null) return true;
+        if (value1 == null || value2 == null) return false;
+
+        // Сравнение с учётом разных типов (например, числа как Integer vs Long)
+        return value1.toString().equals(value2.toString());
     }
 }
