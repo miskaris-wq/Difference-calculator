@@ -18,4 +18,5 @@ public class Parser {
                 ? YAML_MAPPER.readValue(file, new TypeReference<>() { })
                 : JSON_MAPPER.readValue(file, new TypeReference<>() { });
     }
+
 }

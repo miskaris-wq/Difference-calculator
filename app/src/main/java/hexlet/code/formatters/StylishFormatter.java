@@ -52,7 +52,7 @@ public class StylishFormatter {
 
     private static String formatValue(Object value) {
         if (value instanceof Map || value instanceof Iterable) {
-            return "[complex value]";
+            return value.toString();
         } else if (value == null) {
             return "null";
         } else {
