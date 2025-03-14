@@ -1,10 +1,9 @@
 package hexlet.code;
 
-import hexlet.code.formatters.JsonFormatter;
 import org.junit.jupiter.api.Test;
-import java.util.Map;
-import java.util.TreeMap;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class JsonFormatterTest {
 

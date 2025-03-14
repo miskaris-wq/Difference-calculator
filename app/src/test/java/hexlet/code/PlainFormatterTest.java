@@ -3,20 +3,22 @@ import hexlet.code.formatters.PlainFormatter;
 import org.junit.jupiter.api.Test;
 import java.util.Map;
 import java.util.TreeMap;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PlainFormatterTest {
+    private  final int VALUE_FOR_KEY_2_1 = 42;
+    private  final int VALUE_FOR_KEY_2_2 = 100;
 
     @Test
     void testFormat() {
         Map<String, Object> data1 = new TreeMap<>();
         data1.put("key1", "value1");
-        data1.put("key2", 42);
+        data1.put("key2", VALUE_FOR_KEY_2_1);
         data1.put("key3", true);
 
         Map<String, Object> data2 = new TreeMap<>();
         data2.put("key1", "value1");
-        data2.put("key2", 100);
+        data2.put("key2", VALUE_FOR_KEY_2_2);
         data2.put("key4", "new value");
 
         String expected = """

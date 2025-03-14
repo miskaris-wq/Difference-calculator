@@ -12,16 +12,12 @@ public class Differ {
         Map<String, Object> data1 = Parser.parse(filepath1);
         Map<String, Object> data2 = Parser.parse(filepath2);
 
-        switch (format) {
-            case "plain":
-                return PlainFormatter.format(data1, data2);
-            case "stylish":
-                return StylishFormatter.format(data1, data2);
-            case "json":
-                return JsonFormatter.format(data1, data2);
-            default:
-                throw new IllegalArgumentException("Unsupported format: " + format);
-        }
+        return switch (format) {
+            case "plain" -> PlainFormatter.format(data1, data2);
+            case "stylish" -> StylishFormatter.format(data1, data2);
+            case "json" -> JsonFormatter.format(data1, data2);
+            default -> throw new IllegalArgumentException("Unsupported format: " + format);
+        };
     }
 
     public static String generate(String filepath1, String filepath2) throws Exception {
