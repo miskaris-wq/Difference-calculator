@@ -12,7 +12,6 @@ public class Differ {
 
             StringBuilder diff = new StringBuilder("{\n");
 
-            // Объединяем и сортируем все ключи
             TreeSet<String> allKeys = new TreeSet<>();
             allKeys.addAll(data1.keySet());
             allKeys.addAll(data2.keySet());
@@ -50,10 +49,9 @@ public class Differ {
     }
 
     private static boolean isEqualValues(Object value1, Object value2) {
-        if (value1 == null && value2 == null) return true;
-        if (value1 == null || value2 == null) return false;
+        if (value1 == null && value2 == null) {return true;}
+        if (value1 == null || value2 == null) {return false;}
 
-        // Сравнение с учётом разных типов (например, числа как Integer vs Long)
         return value1.toString().equals(value2.toString());
     }
 }

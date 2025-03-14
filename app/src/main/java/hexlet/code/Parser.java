@@ -15,7 +15,7 @@ public class Parser {
     public static Map<String, Object> parse(String filePath) throws IOException {
         File file = new File(filePath);
         return file.getName().endsWith(".yml") || file.getName().endsWith(".yaml")
-                ? YAML_MAPPER.readValue(file, new TypeReference<>() {})
-                : JSON_MAPPER.readValue(file, new TypeReference<>() {});
+                ? YAML_MAPPER.readValue(file, new TypeReference<>(){} )
+                : JSON_MAPPER.readValue(file, new TypeReference<>(){} );
     }
 }
