@@ -1,0 +1,5 @@
+# Игнорировать папку .idea (настройки IntelliJ IDEA)
+.idea/
+
+# Игнорировать файл .DS_Store (настройки macOS)
+.DS_Store
