@@ -4,7 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c074536a-cc5a-4690-8d4d-e231d87218b1" name="Changes" comment="" />
+    <list default="true" id="c074536a-cc5a-4690-8d4d-e231d87218b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/expected_json.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/expected_plain.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/expected_stylish.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hexlet/code/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hexlet/code/DifferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hexlet/code/DifferTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hexlet/code/JsonFormatterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hexlet/code/PlainFormatterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/file1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/file1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/file1big.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/file1big.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/file1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/file2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/file2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/file2big.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/file2big.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/file2.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test1.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test2.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test3.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test4.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test9.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,35 +92,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.AppTest.executor": "Run",
-    "Gradle.DifferTest.executor": "Run",
-    "Gradle.JsonFormatterTest.executor": "Run",
-    "Gradle.JsonParserTest.executor": "Run",
-    "Gradle.PlainFormatterTest.executor": "Run",
-    "Gradle.app [:JsonFormatterTest.main()].executor": "Run",
-    "Gradle.app [:hexlet.code.App.main()].executor": "Run",
-    "Gradle.app [InstallDist].executor": "Run",
-    "Gradle.app [init].executor": "Run",
-    "Gradle.app [run].executor": "Run",
-    "Gradle.app.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "/Users/rasskazovaksenya/java-project-71/app/src/test/java/hexlet/code",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.49310344"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.AppTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DifferTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JsonFormatterTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JsonParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PlainFormatterTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [:JsonFormatterTest.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [:hexlet.code.App.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [InstallDist].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [init].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [run].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/rasskazovaksenya/java-project-71/app/src/test/java/hexlet/code&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.49310344&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
@@ -109,7 +142,7 @@
       <command value="gradle run" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.app [InstallDist]">
+  <component name="RunManager">
     <configuration name="app [InstallDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
