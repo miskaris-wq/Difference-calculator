@@ -48,43 +48,4 @@ public final class App implements Callable<String> {
         System.exit(exitCode);
     }
 
-    public boolean isHelp() {
-        return help;
-    }
-
-    public void setHelp(boolean help) {
-        this.help = help;
-    }
-
-    public boolean isVersion() {
-        return version;
-    }
-
-    public void setVersion(boolean version) {
-        this.version = version;
-    }
-
-    public String getFormat() {
-        return format;
-    }
-
-    public void setFormat(String format) {
-        this.format = format;
-    }
-
-    public String getFilepath1() {
-        return filepath1;
-    }
-
-    public void setFilepath1(String filepath1) {
-        this.filepath1 = filepath1;
-    }
-
-    public String getFilepath2() {
-        return filepath2;
-    }
-
-    public void setFilepath2(String filepath2) {
-        this.filepath2 = filepath2;
-    }
 }

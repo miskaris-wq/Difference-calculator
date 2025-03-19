@@ -12,11 +12,10 @@ public class Parser {
     private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
     private static final ObjectMapper YAML_MAPPER = new ObjectMapper(new YAMLFactory());
 
-    public static Map<String, Object> parse(String filePath) throws IOException {
-        File file = new File(filePath);
-        return file.getName().endsWith(".yml") || file.getName().endsWith(".yaml")
-                ? YAML_MAPPER.readValue(file, new TypeReference<>() { })
-                : JSON_MAPPER.readValue(file, new TypeReference<>() { });
+    public static Map<String, Object> parse(String content, String dataType) throws IOException {
+        return dataType.equals("yml") || dataType.equals("yaml")
+                ? YAML_MAPPER.readValue(content, new TypeReference<>() { })
+                : JSON_MAPPER.readValue(content, new TypeReference<>() { });
     }
 
 }

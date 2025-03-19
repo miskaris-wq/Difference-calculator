@@ -5,25 +5,29 @@ import java.util.TreeSet;
 
 public class StylishFormatter {
 
-    public static String format(Map<String, Object> data1, Map<String, Object> data2) {
+    public static String format(Map<String, Map<String, Object>> diff) {
         StringBuilder result = new StringBuilder("{\n");
-        TreeSet<String> allKeys = new TreeSet<>();
-        allKeys.addAll(data1.keySet());
-        allKeys.addAll(data2.keySet());
 
-        for (String key : allKeys) {
-            Object value1 = data1.get(key);
-            Object value2 = data2.get(key);
+        for (Map.Entry<String, Map<String, Object>> entry : diff.entrySet()) {
+            String key = entry.getKey();
+            Map<String, Object> value = entry.getValue();
 
-            if (!data2.containsKey(key)) {
-                appendLine(result, "- ", key, value1);
-            } else if (!data1.containsKey(key)) {
-                appendLine(result, "+ ", key, value2);
-            } else if (!isEqualValues(value1, value2)) {
-                appendLine(result, "- ", key, value1);
-                appendLine(result, "+ ", key, value2);
-            } else {
-                appendLine(result, "  ", key, value1);
+            switch (value.get("status").toString()) {
+                case "removed":
+                    appendLine(result, "- ", key, value.get("oldValue"));
+                    break;
+                case "added":
+                    appendLine(result, "+ ", key, value.get("newValue"));
+                    break;
+                case "updated":
+                    appendLine(result, "- ", key, value.get("oldValue"));
+                    appendLine(result, "+ ", key, value.get("newValue"));
+                    break;
+                case "unchanged":
+                    appendLine(result, "  ", key, value.get("value"));
+                    break;
+                default:
+                    throw new IllegalArgumentException("Unknown status: " + value.get("status"));
             }
         }
 

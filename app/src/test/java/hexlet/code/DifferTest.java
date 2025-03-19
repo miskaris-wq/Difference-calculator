@@ -74,6 +74,28 @@ class DifferTest {
         assertEquals(expected, diff);
     }
 
+    @Test
+    void testGenerateDiffDefaultJson() throws Exception {
+        String path1 = "./src/test/resources/file1.json";
+        String path2 = "./src/test/resources/file2.json";
+
+        String expected = readFile("./src/test/resources/expected_stylish.txt");
+        String diff = Differ.generate(path1, path2);
+
+        assertEquals(expected, diff);
+    }
+
+    @Test
+    void testGenerateDiffDefaultYaml() throws Exception {
+        String path1 = "./src/test/resources/file1.yml";
+        String path2 = "./src/test/resources/file2.yml";
+
+        String expected = readFile("./src/test/resources/expected_stylish.txt");
+        String diff = Differ.generate(path1, path2);
+
+        assertEquals(expected, diff);
+    }
+
     private String readFile(String path) throws Exception {
         return new String(Files.readAllBytes(Paths.get(path)));
     }

@@ -5,25 +5,27 @@ import java.util.TreeSet;
 
 public class PlainFormatter {
 
-    public static String format(Map<String, Object> data1, Map<String, Object> data2) {
+    public static String format(Map<String, Map<String, Object>> diff) {
         StringBuilder result = new StringBuilder();
 
-        TreeSet<String> allKeys = new TreeSet<>();
-        allKeys.addAll(data1.keySet());
-        allKeys.addAll(data2.keySet());
+        for (Map.Entry<String, Map<String, Object>> entry : diff.entrySet()) {
+            String key = entry.getKey();
+            Map<String, Object> value = entry.getValue();
 
-        for (String key : allKeys) {
-            Object value1 = data1.get(key);
-            Object value2 = data2.get(key);
-
-            if (!data2.containsKey(key)) {
-                result.append(String.format("Property '%s' was removed\n", key));
-            } else if (!data1.containsKey(key)) {
-                result.append(String.format("Property '%s' was added with value: %s\n",
-                        key, formatValue(data2.get(key))));
-            } else if (!isEqualValues(value1, value2)) {
-                result.append(String.format("Property '%s' was updated. From %s to %s\n",
-                        key, formatValue(value1), formatValue(value2)));
+            switch (value.get("status").toString()) {
+                case "removed":
+                    result.append(String.format("Property '%s' was removed\n", key));
+                    break;
+                case "added":
+                    result.append(String.format("Property '%s' was added with value: %s\n",
+                            key, formatValue(value.get("newValue"))));
+                    break;
+                case "updated":
+                    result.append(String.format("Property '%s' was updated. From %s to %s\n",
+                            key, formatValue(value.get("oldValue")), formatValue(value.get("newValue"))));
+                    break;
+                default:
+                    break;
             }
         }
 
