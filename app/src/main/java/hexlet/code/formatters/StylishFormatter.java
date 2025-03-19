@@ -1,7 +1,6 @@
 package hexlet.code.formatters;
 
 import java.util.Map;
-import java.util.TreeSet;
 
 public class StylishFormatter {
 
