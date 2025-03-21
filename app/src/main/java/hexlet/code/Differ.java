@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.formatters.DiffBuilder;
 import hexlet.code.formatters.Formatter;
 import java.nio.file.Files;
 
